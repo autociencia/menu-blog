@@ -1,0 +1,121 @@
+#menunav{
+	background:white;
+	padding-left:120px;
+	padding-right:120px;
+	margin-bottom: 50px;
+}
+.menunav {
+  text-align: left;
+  display: inline;
+  margin: 0;
+  padding: 15px 4px 17px 0;
+  list-style: none;
+  margin-bottom: 50px;
+}
+.menunav li {
+  font: 18px sans-serif;
+  display: inline-block;
+  margin-right: -4px;
+  position: relative;
+  padding: 15px 20px;
+  background: #fff;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.menunav  li:hover {
+ background: #cccccc;
+  color: #fff;
+}
+.menunav  li ul {
+  padding: 0;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  width: 160px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s;
+}
+.menunav li ul li { 
+  background: #cccccc; 
+  display: block; z-index:999999999999;
+  color: #fff;
+}
+.menunav  li ul li:hover {
+	background: #2C3E50;
+}
+.menunav  li ul li:hover a {
+	color: #fff;
+}
+.menunav  li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+.menunav a{
+	text-decoration:none;
+	font-size:20px;color: #333333;
+	font-family: 'Open Sans Condensed', sans-serif;
+	line-height: 26px;
+}
+
+ul li a:hover + .hidden, .hidden:hover {
+	display: block;
+}
+
+.show-menu {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	color: #333;
+	background: #fff;
+	text-align: center;
+	padding: 10px 0;
+	display: none;
+}
+
+/*Exibir checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+
+/*Exibir menu em caso de clique*/
+input[type=checkbox]:checked ~ .menunav {
+    display: block;
+}
+
+@media screen and (max-width : 760px){
+	/*Ocultar Menu em dispositivos de baixa resolução*/
+	.menunav {
+		position: static;
+		display: none;
+	}
+	/*Espaço Vertical*/
+	.menunav li {
+		margin-bottom: 0px;
+	}
+	/*Largura dos links do menu*/
+	.menunav ul, .menunav li  {
+		width: 100%;
+	}
+	/*Exebir link do 'show menu'*/
+	.show-menu {
+		display: block;
+	}
+	
+	/*SVG da imagem do menu*/
+	#menunav img {
+		width: 0.8em;
+	}
+}
